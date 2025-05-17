@@ -329,35 +329,10 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 .fh5co-video {
-	height: 450px;
+	height: 857px;
 	overflow: hidden;
 	@include border-radius(7px);
-	a {
-		z-index: 1001;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		margin-top: -45px;
-		margin-left: -45px;
-		width: 90px;
-		height: 90px;
-		display: table;
-		text-align: center;
-		background: $brand-white;
-		
-		-webkit-box-shadow: 0px 14px 30px -15px rgba(0,0,0,0.75);
-		-moz-box-shadow: 0px 14px 30px -15px rgba(0,0,0,0.75);
-		box-shadow: 0px 14px 30px -15px rgba(0,0,0,0.75);
-		@include border-radius(50%);
-		
-		i {
-			text-align: center;
-			display: table-cell;
-			vertical-align: middle;
-			font-size: 40px;
 
-		}
-	}
 	.overlay {
 		position: absolute;
 		top: 0;
@@ -380,55 +355,6 @@ h1, h2, h3, h4, h5, h6, figure {
 			transform: scale(1.2);
 			
 		}
-	}
-}
-.fh5co-cover {
-	height: 900px;
-	background-size: cover;
-	// background-position: center center;
-	background-repeat: no-repeat;
-	position: relative;
-	width: 100%;
-	.overlay {
-		z-index:0;
-		position: absolute;
-		bottom: 0;
-		top: 0;
-		left: 0;
-		right: 0;
-		background: rgba(0, 0, 0, .5);
-	}
-	> .fh5co-container {
-		position: relative;
-		z-index: 10;
-	}
-	@media screen and (max-width: $screen-sm) {
-		height: 600px;
-	}
-	.display-t,
-	.display-tc {
-		height: 900px;
-		display: table;
-		width: 100%;
-		@media screen and (max-width: $screen-sm) {
-			height: 600px;
-		}
-	}	
-
-	&.fh5co-cover-sm {
-		height: 600px;
-		@media screen and (max-width: $screen-sm) {
-			height: 400px;
-		}
-		.display-t,
-		.display-tc {
-			height: 600px;
-			display: table;
-			width: 100%;
-			@media screen and (max-width: $screen-sm) {
-				height: 400px;
-			}
-		}	
 	}
 }
 

@@ -241,38 +241,12 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 .fh5co-video {
-  height: 450px;
+  height: 1142px;
   overflow: hidden;
   -webkit-border-radius: 7px;
   -moz-border-radius: 7px;
   -ms-border-radius: 7px;
   border-radius: 7px;
-}
-.fh5co-video a {
-  z-index: 1001;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -45px;
-  margin-left: -45px;
-  width: 90px;
-  height: 90px;
-  display: table;
-  text-align: center;
-  background: #fff;
-  -webkit-box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75);
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  border-radius: 50%;
-}
-.fh5co-video a i {
-  text-align: center;
-  display: table-cell;
-  vertical-align: middle;
-  font-size: 40px;
 }
 .fh5co-video .overlay {
   position: absolute;
@@ -295,6 +269,48 @@ h1, h2, h3, h4, h5, h6, figure {
   -ms-transform: scale(1.2);
   -o-transform: scale(1.2);
   transform: scale(1.2);
+}
+.fh5co-video .video-container {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  margin: auto;
+  cursor: pointer;
+}
+
+.fh5co-video video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.fh5co-video .play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s;
+}
+
+.fh5co-video .play-button:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.fh5co-video .play-button::before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 24px solid white;
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid transparent;
 }
 
 .fh5co-cover {
