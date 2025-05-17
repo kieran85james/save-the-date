@@ -112,7 +112,12 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 @media screen and (max-width: 768px) {
   .fh5co-nav .menu-1, .fh5co-nav .menu-2 {
-    /* display: none; */
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+  }
+  .fh5co-nav ul li a {
+    font-size: 16px !important;
   }
 }
 .fh5co-nav ul {
@@ -1521,6 +1526,10 @@ form label {
 .gototop a:hover, .gototop a:active, .gototop a:focus {
   text-decoration: none;
   outline: none;
+}
+
+.fh5co-nav ul {
+  padding: 0;
 }
 
 .fh5co-nav-toggle {
