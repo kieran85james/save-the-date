@@ -1,49 +1,49 @@
 $(document).ready(function() {
   let clock;
 
-  // Grab the current date
-  let currentDate = new Date();
+  // Current time in London timezone
+  let currentDate = moment.tz("Europe/London");
 
-  // Target future date/24 hour time/Timezone
-  let targetDate = moment.tz("2026-05-23 00:00", "Europe/London");
+  // Target date in London timezone
+  // let targetDate = moment.tz("2026-05-23 00:00", "Europe/London");
+  let targetDate = moment.tz("2026-05-10 21:30", "Europe/London");
 
-  // Calculate the difference in seconds between the future and current date
-  let diff = targetDate / 1000 - currentDate.getTime() / 1000;
+  // Difference in seconds
+  let diff = targetDate.diff(currentDate, "seconds");
 
   if (diff <= 0) {
-    // If remaining countdown is 0
+
     clock = $(".clock").FlipClock(0, {
       clockFace: "DailyCounter",
       countdown: true,
       autostart: false
     });
-    console.log("Date has already passed!")
-    
+
+    console.log("Date has already passed!");
+
   } else {
-    // Run countdown timer
+
     clock = $(".clock").FlipClock(diff, {
       clockFace: "DailyCounter",
       countdown: true,
       callbacks: {
+
+        interval: function() {
+
+          // Prevent negative countdown
+          if (clock.getTime().time <= 0) {
+            clock.setTime(0);
+            clock.stop();
+          }
+
+        },
+
         stop: function() {
-          console.log("Timer has ended!")
+          console.log("Timer has ended!");
         }
+
       }
     });
-    
-    // Check when timer reaches 0, then stop at 0
-    setTimeout(function() {
-      checktime();
-    }, 1000);
-    
-    function checktime() {
-      t = clock.getTime();
-      if (t <= 0) {
-        clock.setTime(0);
-      }
-      setTimeout(function() {
-        checktime();
-      }, 1000);
-    }
+
   }
 });
