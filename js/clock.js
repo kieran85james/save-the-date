@@ -1,15 +1,16 @@
 $(document).ready(function() {
 
-  // Current time in London timezone
-  let currentDate = moment.tz("Europe/London");
+  // Target date (local browser time)
+  // let targetDate = new Date("2026-05-23T00:00:00");
+  let targetDate = new Date("2026-05-10T21:40:00");
 
-  // Target date in London timezone
-  let targetDate = moment.tz("2026-05-23 00:00", "Europe/London");
+  // Current date
+  let currentDate = new Date();
 
   // Difference in seconds
-  let diff = targetDate.diff(currentDate, "seconds");
+  let diff = Math.floor((targetDate - currentDate) / 1000);
 
-  // Prevent negative starting values
+  // Prevent negatives
   diff = Math.max(diff, 0);
 
   // Create clock
@@ -17,16 +18,10 @@ $(document).ready(function() {
     clockFace: "DailyCounter",
     countdown: true,
     callbacks: {
-
       stop: function() {
-
-        // Force display to remain at 0
         clock.setTime(0);
-
         console.log("Timer has ended!");
-
       }
-
     }
   });
 
