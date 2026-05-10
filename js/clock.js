@@ -1,8 +1,7 @@
 $(document).ready(function() {
 
   // Target date (local browser time)
-  // let targetDate = new Date("2026-05-23T00:00:00");
-  let targetDate = new Date("2026-05-10T21:40:00");
+  let targetDate = new Date("2026-05-23T00:00:00");
 
   // Current date
   let currentDate = new Date();
